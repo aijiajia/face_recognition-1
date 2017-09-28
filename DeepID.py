@@ -139,9 +139,9 @@ class DeepID():
                 if num>select_ids[self.num-1][0]:
                     break
                 if num%ratio!=0:
-                    fid_train.write(os.path.join(subdir,filename)+'\t'+str(pid)+'\n')
+                    fid_train.write(os.path.join(subdir,filename)+' '+str(pid)+'\n')
                 else:
-                    fid_test.write(os.path.join(subdir,filename)+'\t'+str(pid)+'\n')
+                    fid_test.write(os.path.join(subdir,filename)+' '+str(pid)+'\n')
                 num=num+1
             pid=pid+1
         fid_train.close()
@@ -184,7 +184,6 @@ class DeepID():
         _command+='echo "Done"'
     
         DeepID.fileopt(self.shcreate,_command)
-
         os.system(_command)
 
     def compute_imgmean(self):
@@ -284,11 +283,11 @@ class DeepID():
         
     def test(self,iternum):
         out=r' 2>&1 |tee '
-        _command=self.caffepath+'/build/tools/caffe test --model='+self.net_proto+' --weights='+self.snapshot_pre+'_iter_'+str(iternum)+'.caffemodel'+out+log_test
+        _command=self.caffepath+'/build/tools/caffe test --model='+self.net_proto+' --weights='+self.snapshot_pre+'_iter_'+str(iternum)+'.caffemodel'+out+self.log_test
         DeepID.fileopt(self.shtest,_command)
         os.system(_command)
 def demo(num):
-    deepID=DeepID('deepID','/home/ikode/caffe-master/','/home/ikode/caffe-master/examples/deepID/','/media/ikode/Document/big_materials/document/deep_learning/caffe/face_datasets/webface/croped/',num)
+    deepID=DeepID('deepID','/home/herbert/caffe/','/home/herbert/deepid/face_recognition-1/','/home/herbert/CASIA-WebFace-croped/',num)
     ratio=9
 
     deepID.div_data(ratio)
@@ -303,5 +302,5 @@ def demo(num):
 
 if __name__=='__main__':
 
-    demo(1000)
+    demo(100)
     #demo后面的数字是训练的人数（1-10575）
