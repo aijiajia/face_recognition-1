@@ -302,5 +302,5 @@ def demo(num):
 
 if __name__=='__main__':
 
-    demo(100)
+    demo(1000)
     #demo后面的数字是训练的人数（1-10575）
