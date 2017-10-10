@@ -136,7 +136,7 @@ class DeepID():
             num=1
             for filename in filenamelist :
                 #print select_ids[top_num-1]
-                if num>select_ids[self.num-1][0]:
+                if num>select_ids[self.num-1][0]: # why?
                     break
                 if num%ratio!=0:
                     fid_train.write(os.path.join(subdir,filename)+' '+str(pid)+'\n')
