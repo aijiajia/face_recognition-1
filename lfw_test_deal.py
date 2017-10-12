@@ -234,10 +234,11 @@ def write_pairs(pairs_result,savepath):
 
 
 def demo_lfw():
-    caffe_dir='/home/ikode/caffe-master/'
+    caffe_dir='/home/herbert/caffe/'
     pairs=caffe_dir+'data/deepID/pairs.txt'
     lfwdir=caffe_dir+'data/deepID/lfwcrop_color/faces/'
     ext='ppm'
+    # pairs_result : a list contains pairs
     pairs_result=testdeal(pairs,lfwdir,ext)
     savepath=caffe_dir+'examples/deepID/lfw_'
     write_pairs(pairs_result,savepath)   
@@ -254,7 +255,7 @@ def grey_pairs():
 
     
 def demo_webface_resize():
-    DEEPID='/home/ikode/caffe-master/data/deepID/'
+    DEEPID='/home/herbert/caffe/data/deepID/'
     pairs=DEEPID+'pairs.txt'
 #    lfwdir=DEEPID+'lfwcrop_color/faces/'
     lfwdir='/media/ikode/Document/big_materials/document/deep_learning/caffe/face_datasets/webface/croped/'
@@ -262,13 +263,13 @@ def demo_webface_resize():
     lfw_chang='/media/ikode/Document/big_materials/document/deep_learning/caffe/face_datasets/webface/change/'
 
     pairs_result=testdeal(pairs,lfwdir,ext,lfw_chang,False,True)
-    savepath=caffe_dir+'examples/deepID/webface_'
+    savepath='/home/herbert/caffe/'+'examples/deepID/webface_'
     write_pairs(pairs_result,savepath)   
 
 
 
 def demo_color_resize():
-    DEEPID='/home/ikode/caffe-master/data/deepID/'
+    DEEPID='/home/herbert/caffe/data/deepID/'
     pairs=DEEPID+'pairs.txt'
 #    lfwdir=DEEPID+'lfwcrop_color/faces/'
     lfwdir='/media/ikode/Document/big_materials/document/deep_learning/caffe/face_datasets/webface/croped/'
