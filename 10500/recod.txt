@@ -1,0 +1,5 @@
+I1012 15:55:21.113502  4474 compute_image_mean.cpp:108] Write to /home/herbert/github_projects/deepid/face_recognition-1/10500/deepID_10500_mean.binaryproto
+I1012 15:55:21.113808  4474 compute_image_mean.cpp:114] Number of channels: 3
+I1012 15:55:21.113826  4474 compute_image_mean.cpp:119] mean_value channel [0]: 99.6773
+I1012 15:55:21.113852  4474 compute_image_mean.cpp:119] mean_value channel [1]: 117.003
+I1012 15:55:21.113859  4474 compute_image_mean.cpp:119] mean_value channel [2]: 156.208

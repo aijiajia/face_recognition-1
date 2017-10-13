@@ -35,20 +35,24 @@ def CEF(path):
     print("deleted dir(s) : ", deleted_dir)
     print path, 'Dispose over!'
 
-def people_count(dataset_path):
+
+def people_count(dataset_path, limit_count=10):
     dirlists = os.listdir(path)
     people_counts = len(dirlists)
     dict_id_num = {}
     for subdir in dirlists:
         dict_id_num[subdir] = len(os.listdir(os.path.join(path, subdir)))
     sorted_num_id = sorted([(v, k) for k, v in dict_id_num.items()], reverse=True)
+    sum_images = sum([v for v, _ in sorted_num_id])
     least10 = sorted_num_id[-10:]
     most10 = sorted_num_id[:10]
+    people_limit_count = len([v for v, _ in sorted_num_id if v >= 10])
     print("people_counts : ",people_counts)
+    print("image_counts : ", sum_images)
     print("least10 : ", least10)
     print("most10 : ", most10)
+    print("people's images more than "+ str(limit_count) + ": is "+ str(people_limit_count))
     print("\tdone...")
-
 
 
 if __name__ == '__main__':
